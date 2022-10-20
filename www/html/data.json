@@ -1,0 +1,79 @@
+{
+    "users": [
+        {
+            "id": 1,
+            "email": "test_user_1@gmail.com"
+        },
+        {
+            "id": 2,
+            "email": "test_user_2@gmail.com"
+        }
+    ],
+    "trading_accounts": [
+        {
+            "id": 1,
+            "user_id": 1,
+            "balance": 550,
+            "currency": "USD"
+        },
+        {
+            "id": 2,
+            "user_id": 1,
+            "balance": 610,
+            "currency": "EUR"
+        },
+        {
+            "id": 3,
+            "user_id": 2,
+            "balance": 930,
+            "currency": "GBP"
+        }
+    ],
+    "trading_accounts_transations": [
+        {
+            "user_id": 2,
+            "trading_account_id": 3,
+            "operation": "Transfer",
+            "summ": "-50",
+            "currency": "USD",
+            "comment": "A Test transfer",
+            "date": "2022-10-20 04:06:57"
+        },
+        {
+            "user_id": 1,
+            "trading_account_id": 1,
+            "operation": "Transfer",
+            "summ": "+50",
+            "currency": "USD",
+            "comment": "A Test transfer",
+            "date": "2022-10-20 04:06:57"
+        },
+        {
+            "user_id": 1,
+            "trading_account_id": 2,
+            "operation": "Deposit",
+            "summ": "+100",
+            "currency": "USD",
+            "comment": "Deposit USD",
+            "date": "2022-10-20 04:08:50"
+        },
+        {
+            "user_id": 2,
+            "trading_account_id": 3,
+            "operation": "Withdraw",
+            "summ": "-100",
+            "currency": "EUR",
+            "comment": "B Withdraw test",
+            "date": "2022-10-20 04:10:17"
+        },
+        {
+            "user_id": 2,
+            "trading_account_id": 3,
+            "operation": "Deposit",
+            "summ": "+300",
+            "currency": "USD",
+            "comment": "C Deposit USD",
+            "date": "2022-10-20 04:11:05"
+        }
+    ]
+}

@@ -1,0 +1,54 @@
+To run:
+	docker-compose rm -s -f && docker-compose up
+
+API CALLS:
+	Get all accounts in the system:
+		GET: /get_users
+
+	Get the balance of a specific account:
+		GET: /get_user_accounts/{user_id}
+		GET: /get_account_data/{account_id}
+
+	Get all account transactions:
+		GET: /get_account_transaction_history/{account_id}?sort_by={field}
+
+	Deposit:
+		POST: /deposit
+		{
+			"user_id": 1,
+			"trading_account_id": 2,
+			"payment_method": "CC",
+			"amount": 100,
+			"currency": "USD",
+			"comment": "Deposit USD"
+		}
+		
+	Withdraw:
+		POST: /withdraw
+		{
+			"user_id": 2,
+			"trading_account_id": 3,
+			"payment_method": "CC",
+			"amount": 100,
+			"currency": "EUR",
+			"comment": "Withdraw test"
+		}
+
+	Transfer:
+		POST: /transfer
+		{
+			"trading_account_from": 3,
+			"trading_account_to": 1,
+			"transfer_method": "INNER",
+			"amount": 50,
+			"currency": "USD",
+			"comment": "Test transfer"
+		}
+
+Used patterns:
+	Singleton - For DB emulation because it is a good practice when you use only one connection to DB
+	Factory - Specifically, in this project, it is very useful when creating payment providers
+
+Analyzers:
+	./vendor/bin/phpcs ./ --standard=PSR2 --ignore=*/vendor/* - PASS
+	phpstan - See phpstan.jpg
